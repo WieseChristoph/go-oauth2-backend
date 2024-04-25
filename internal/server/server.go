@@ -28,7 +28,7 @@ type Server struct {
 }
 
 func NewServer() *http.Server {
-	port, _ := strconv.Atoi(env.GetEnvOrDefault("PORT", "8080"))
+	port, _ := strconv.Atoi(env.GetEnvOrDefault("PORT", "80"))
 
 	db := database.New()
 	repos := repositories.New(db)

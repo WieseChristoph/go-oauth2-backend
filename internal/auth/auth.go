@@ -194,7 +194,9 @@ func (a *auth) HandleOAuth2Callback(w http.ResponseWriter, r *http.Request) erro
 
 	// Format IP address
 	ipAddress := r.RemoteAddr
-	ipAddress = ipAddress[0:strings.LastIndex(ipAddress, ":")]
+	if lastIndex := strings.LastIndex(ipAddress, ":"); lastIndex != -1 {
+		ipAddress = ipAddress[0:lastIndex]
+	}
 	ipAddress = strings.Trim(ipAddress, "[]")
 
 	// Create session
