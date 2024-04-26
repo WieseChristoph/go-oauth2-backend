@@ -1,5 +1,7 @@
 # Go OAuth2 Backend
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/WieseChristoph/go-oauth2-backend)](https://goreportcard.com/report/github.com/WieseChristoph/go-oauth2-backend)
+
 This is a simple backend written in Go that uses OAuth2 to authenticate users with Discord and Google. It can be extended to support other OAuth2 providers.
 
 ## Environment Variables
