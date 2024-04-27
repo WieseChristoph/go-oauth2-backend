@@ -72,6 +72,7 @@ func (s *Server) getAuthCallbackHandler(w http.ResponseWriter, r *http.Request) 
 	if err != nil {
 		log.Errorf("Error handling oauth callback for provider '%s'. Err: %v", provider, err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
 	}
 
 	http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
