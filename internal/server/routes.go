@@ -82,6 +82,7 @@ func (s *Server) getLogoutHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Errorf("Error logging out. Err: %v", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
 	}
 
 	http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
